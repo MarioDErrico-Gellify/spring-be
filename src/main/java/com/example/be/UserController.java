@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/*TODO add a env file*/
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/users")
@@ -26,20 +26,15 @@ public class UserController {
         return null;
     }
 
-
-
     @GetMapping("/{id}")
     public User getUser(@PathVariable int id) {
         return userDatabase.get(id);
     }
 
-
-
     @GetMapping("/getAll")
     public Collection<User> getAllUsers() {
         return userDatabase.values();
     }
-
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User user) {
